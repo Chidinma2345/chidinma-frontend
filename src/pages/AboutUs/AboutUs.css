@@ -1,0 +1,138 @@
+/* Color Palette: ADP Deep Blue (#0d1b3e), Action Red (#d32f2f), Gold Accent (#ffc107) */
+
+.about-root {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Header Banner Styling */
+.about-header-banner {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2b56 100%);
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 5px solid #d32f2f;
+}
+
+.about-header-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+}
+
+.about-header-subtitle {
+  color: #02CCFE;
+  font-weight: 600 !important;
+  margin-top: 10px !important;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main Body Container */
+.about-body-container {
+  margin-top: 50px;
+}
+
+/* Candidate Image Area */
+.about-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.about-candidate-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.about-image-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(211, 47, 47, 0.9);
+  padding: 10px;
+  text-align: center;
+}
+
+.badge-text {
+  color: #ffffff;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+}
+
+/* Text Content Area */
+.about-section-heading {
+  font-weight: 800 !important;
+  color: #0d1b3e;
+  margin-bottom: 20px !important;
+  position: relative;
+}
+
+.about-section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #d32f2f;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.about-text-paragraph {
+  color: #444444;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Values Cards Section */
+.values-section {
+  margin-top: 60px;
+}
+
+.value-card {
+  padding: 30px 20px;
+  height: 100%;
+  text-align: center;
+  border-top: 4px solid #0d1b3e;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-top-color: #d32f2f;
+}
+
+.value-icon-avatar {
+  background-color: #0d1b3e !important;
+  color: #02CCFE !important;
+  width: 60px !important;
+  height: 60px !important;
+  margin: 0 auto 15px auto !important;
+}
+
+.value-card-title {
+  font-weight: 700 !important;
+  color: #0d1b3e;
+  margin-bottom: 10px !important;
+}
+
+.value-card-text {
+  color: #666666;
+  line-height: 1.6 !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .about-header-title {
+    font-size: 2rem !important;
+  }
+  .about-header-subtitle {
+    font-size: 1.1rem !important;
+  }
+}

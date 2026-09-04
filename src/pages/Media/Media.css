@@ -1,0 +1,104 @@
+/* Media Page Styling using Deep Blue (#0d1b3e), Action Red (#d32f2f), and Gold (#ffc107) */
+
+.media-root {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.media-header-banner {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2b56 100%);
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 5px solid #d32f2f;
+}
+
+.media-page-title {
+  font-weight: 800 !important;
+  color: #ffffff;
+  font-size: 2.3rem !important;
+}
+
+.media-page-subtitle {
+  color: #02CCFE;
+  margin-top: 10px !important;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-content-container {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.media-tabs-wrapper {
+  margin-bottom: 35px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.media-tabs .MuiTab-root {
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+  color: #0d1b3e !important;
+}
+
+.media-tabs .Mui-selected {
+  color: #d32f2f !important;
+}
+
+.media-tabs .MuiTabs-indicator {
+  background-color: #d32f2f !important;
+  height: 3px;
+}
+
+.media-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.media-card:hover {
+  transform: translateY(-4px);
+}
+
+.media-img {
+  object-fit: cover;
+}
+
+.media-card-title {
+  font-weight: 700 !important;
+  color: #0d1b3e;
+  line-height: 1.3 !important;
+}
+
+.media-card-date {
+  display: block;
+  margin-top: 8px !important;
+  color: #888888;
+}
+
+.media-type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.photo-badge {
+  background-color: rgba(13, 27, 62, 0.1);
+  color: #0d1b3e;
+}
+
+.video-badge {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #d32f2f;
+}

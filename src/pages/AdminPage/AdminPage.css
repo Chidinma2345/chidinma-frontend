@@ -1,0 +1,84 @@
+/* Color Scheme matching ADP Party Palette: Deep Blue (#0d1b3e), Action Red (#d32f2f) */
+
+.admin-page-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #0d1b3e;
+  padding-bottom: 12px;
+}
+
+.admin-page-title {
+  color: #0d1b3e;
+  font-weight: 800 !important;
+}
+
+.admin-form-paper {
+  padding: 30px;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border-top: 5px solid #d32f2f;
+}
+
+.admin-section-heading {
+  color: #0d1b3e;
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
+}
+
+.image-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.upload-btn {
+  background-color: #0d1b3e !important;
+  color: #ffffff !important;
+  text-transform: none !important;
+}
+
+.upload-btn:hover {
+  background-color: #1a2b56 !important;
+}
+
+.file-name-display {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.publish-btn {
+  background-color: #d32f2f !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 12px 0 !important;
+  font-size: 1rem !important;
+}
+
+.publish-btn:hover {
+  background-color: #b71c1c !important;
+}
+
+.admin-list-paper {
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border-top: 5px solid #0d1b3e;
+}
+
+@media (max-width: 600px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

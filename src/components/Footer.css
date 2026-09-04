@@ -1,0 +1,193 @@
+/* Footer Palette based on ADP Theme: Deep Blue (#0d1b3e), Action Red (#d32f2f) */
+
+.footer-root {
+  background-color: #0d1b3e;
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 25px;
+  border-top: 5px solid #d32f2f;
+  margin-top: 60px;
+  width: 100%;
+}
+
+/* Master 4-Column Grid Layout - Adjusted Column Widths for Quick Navigation */
+.footer-grid-container {
+  display: grid;
+  grid-template-columns: 2fr 3.2fr 1.6fr 1.6fr;
+  gap: 36px;
+  margin-bottom: 40px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Section */
+.footer-brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-candidate-name {
+  font-weight: 800 !important;
+  color: #ffffff;
+  font-size: 0.95rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.5px;
+}
+
+.footer-motto {
+  color: #02CCFE;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  font-size: 0.85rem !important;
+}
+
+.footer-desc {
+  color: #b0bec5;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+  max-width: 340px;
+}
+
+/* Headings */
+.footer-heading {
+  font-weight: 800 !important;
+  color: #02CCFE;
+  margin-bottom: 18px !important;
+  font-size: 1.05rem !important;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading::after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 3px;
+  background-color: #d32f2f;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Navigation Links - Key Changes Below */
+.footer-links-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 12px;
+}
+
+.footer-link {
+  color: #cfd8dc !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #02CCFE !important;
+  transform: translateX(4px);
+}
+
+/* Contact Section */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #cfd8dc;
+}
+
+.contact-icon {
+  color: #d32f2f;
+  font-size: 1.2rem !important;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Social Buttons */
+.social-intro-text {
+  color: #b0bec5;
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 16px !important;
+}
+
+.social-links-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-btn {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  background-color: #d32f2f !important;
+}
+
+.social-btn.wa:hover { background-color: #25d366 !important; }
+.social-btn.wa-channel:hover { background-color: #128c7e !important; }
+.social-btn.fb:hover, .social-btn.fb-page:hover { background-color: #1877f2 !important; }
+.social-btn.ig:hover { background-color: #e4405f !important; }
+.social-btn.tw:hover { background-color: #000000 !important; }
+.social-btn.tt:hover { background-color: #000000 !important; }
+.social-btn.yt:hover { background-color: #ff0000 !important; }
+
+/* Bottom Footer */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #90a4ae;
+}
+
+.admin-login-footer-link {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 0.75rem !important;
+  text-decoration: none !important;
+}
+
+.admin-login-footer-link:hover {
+  color: #02CCFE !important;
+}
+
+/* Responsive Styles for Tablet & Mobile */
+@media (max-width: 1024px) {
+  .footer-grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

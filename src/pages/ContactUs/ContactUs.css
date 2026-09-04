@@ -1,0 +1,130 @@
+/* Palette derived from ADP Branding: Deep Blue (#0d1b3e), Action Red (#d32f2f), Pure White (#ffffff) */
+
+.contact-root {
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.contact-header {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2b56 100%);
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 5px solid #d32f2f;
+}
+
+.contact-header-title {
+  font-weight: 800 !important;
+  font-size: 2.4rem !important;
+}
+
+.contact-header-subtitle {
+  color: #02CCFE;
+  font-weight: 600 !important;
+  margin-top: 8px !important;
+}
+
+.contact-content-container {
+  margin-top: -30px;
+}
+
+/* Info Side Panel */
+.contact-info-paper {
+  padding: 30px;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border-left: 5px solid #0d1b3e;
+}
+
+.info-section-title {
+  font-weight: 800 !important;
+  color: #0d1b3e;
+  margin-bottom: 10px !important;
+}
+
+.info-description {
+  color: #666666;
+  margin-bottom: 25px !important;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  color: #d32f2f !important;
+  font-size: 2rem !important;
+}
+
+.detail-label {
+  font-weight: 700 !important;
+  color: #0d1b3e;
+}
+
+.detail-value {
+  color: #444444;
+  word-break: break-word;
+}
+
+.social-section-title {
+  font-weight: 700 !important;
+  color: #0d1b3e;
+  margin-top: 30px !important;
+  margin-bottom: 12px !important;
+}
+
+.social-links-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+}
+
+.social-btn.whatsapp { background-color: #25d366 !important; }
+.social-btn.facebook { background-color: #1877f2 !important; }
+.social-btn.instagram { background-color: #e4405f !important; }
+.social-btn.twitter { background-color: #000000 !important; }
+.social-btn.youtube { background-color: #ff0000 !important; }
+
+/* Form Side Panel */
+.contact-form-paper {
+  padding: 30px;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border-top: 5px solid #d32f2f;
+}
+
+.form-section-title {
+  font-weight: 800 !important;
+  color: #0d1b3e;
+  margin-bottom: 20px !important;
+}
+
+.submit-message-btn {
+  background-color: #0d1b3e !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 12px 30px !important;
+  width: 100%;
+}
+
+.submit-message-btn:hover {
+  background-color: #d32f2f !important;
+}
+
+@media (max-width: 600px) {
+  .contact-header-title {
+    font-size: 1.8rem !important;
+  }
+}

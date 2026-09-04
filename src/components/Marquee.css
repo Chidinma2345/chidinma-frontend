@@ -1,0 +1,30 @@
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #0c1836;
+  padding: 6px 0;
+  border-bottom: 3px solid #d32f2f;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-content span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  /* color: #ffffff; */
+  color: greenyellow;
+  letter-spacing: 0.5px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

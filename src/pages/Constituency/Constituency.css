@@ -1,0 +1,119 @@
+/* Color System: Deep Blue (#0d1b3e), Action Red (#d32f2f), Gold Accent (#ffc107) */
+
+.constituency-root {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.constituency-header {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2b56 100%);
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 5px solid #d32f2f;
+}
+
+.constituency-title {
+  font-weight: 800 !important;
+  color: #ffffff;
+}
+
+.constituency-subtitle {
+  color: #02CCFE;
+  margin-top: 10px !important;
+  font-weight: 600 !important;
+}
+
+.constituency-body {
+  margin-top: 40px;
+}
+
+.section-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.block-title {
+  font-weight: 800 !important;
+  color: #0d1b3e;
+  margin-bottom: 15px !important;
+}
+
+.block-sub-title {
+  font-weight: 700 !important;
+  color: #d32f2f;
+  margin-bottom: 15px !important;
+}
+
+.block-text {
+  color: #444444;
+  line-height: 1.7 !important;
+  margin-bottom: 15px !important;
+  font-size: 1.05rem !important;
+}
+
+.focus-card {
+  height: 100%;
+  border-left: 4px solid #0d1b3e;
+  background-color: #fdfdfd !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.focus-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.focus-icon {
+  color: #d32f2f;
+}
+
+.focus-title {
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  color: #0d1b3e;
+}
+
+.focus-desc {
+  color: #666666;
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Sidebar Styling */
+.ward-sidebar-card {
+  border-top: 5px solid #d32f2f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 12px !important;
+}
+
+.ward-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ward-sidebar-title {
+  font-weight: 800 !important;
+  color: #0d1b3e;
+}
+
+.ward-subtitle {
+  color: #666666;
+  margin: 10px 0 15px 0 !important;
+}
+
+.ward-list-item {
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.ward-list-item:last-child {
+  border-bottom: none;
+}

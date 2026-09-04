@@ -1,0 +1,174 @@
+/* Color Palette: Deep Blue (#0d1b3e), Action Red (#d32f2f), Gold Accent (#ffc107) */
+
+.manifesto-root {
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Header Banner */
+.manifesto-header {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2b56 100%);
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 5px solid #d32f2f;
+}
+
+.header-tag {
+  color: #02CCFE !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+  font-size: 0.9rem !important;
+}
+
+.header-title {
+  font-weight: 900 !important;
+  margin-top: 5px !important;
+  font-size: 2.5rem !important;
+}
+
+.header-subtitle {
+  color: #e0e0e0;
+  font-weight: 500 !important;
+  margin-top: 8px !important;
+}
+
+/* Body Container */
+.manifesto-body {
+  margin-top: 40px;
+}
+
+.intro-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 6px solid #d32f2f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 35px;
+}
+
+.intro-heading {
+  color: #0d1b3e;
+  font-weight: 800 !important;
+  margin-bottom: 12px !important;
+}
+
+.intro-text {
+  color: #4a5568;
+  line-height: 1.7 !important;
+  font-size: 1.05rem !important;
+}
+
+/* Agenda Cards */
+.agenda-grid {
+  margin-top: 10px;
+}
+
+.agenda-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 10px !important;
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.agenda-card:hover {
+  transform: translateY(-3px);
+}
+
+.agenda-card-content {
+  padding: 28px !important;
+}
+
+.agenda-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.agenda-icon-wrapper {
+  background-color: rgba(13, 27, 62, 0.08);
+  color: #0d1b3e;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agenda-title {
+  color: #0d1b3e;
+  font-weight: 800 !important;
+  font-size: 1.35rem !important;
+}
+
+.agenda-list {
+  padding-top: 0 !important;
+}
+
+.agenda-list-item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.list-icon-wrapper {
+  min-width: 36px !important;
+}
+
+.check-icon {
+  color: #d32f2f;
+}
+
+.point-text {
+  color: #2d3748;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Download Section */
+.download-box {
+  background-color: #0d1b3e;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 4px solid #02CCFE;
+}
+
+.download-title {
+  font-weight: 800 !important;
+  color: #ffffff;
+}
+
+.download-desc {
+  color: #cbd5e0;
+  margin-top: 8px !important;
+  margin-bottom: 24px !important;
+}
+
+.download-btn {
+  background-color: #d32f2f !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 12px 30px !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+}
+
+.download-btn:hover {
+  background-color: #b71c1c !important;
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 1.8rem !important;
+  }
+  .agenda-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
