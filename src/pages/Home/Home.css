@@ -4,9 +4,22 @@
   width: 100%;
 }
 
-/* Hero Section Base */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
 .hero-section {
-  background: linear-gradient(135deg, #0a142f 0%, #0d1b3e 100%);
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(2, 204, 254, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #0a142f 0%,
+      #0d1b3e 100%
+    );
   color: #ffffff;
   padding: 40px 0 50px 0;
   width: 100%;
@@ -24,7 +37,10 @@
   gap: 30px;
 }
 
-/* Left Hero Column */
+/* =========================================================
+   HERO LEFT COLUMN
+   ========================================================= */
+
 .hero-text-container {
   flex: 1;
   display: flex;
@@ -33,7 +49,8 @@
   text-align: left;
 }
 
-/* Badge pill */
+/* Badge */
+
 .party-badge {
   display: inline-flex;
   align-items: center;
@@ -53,13 +70,14 @@
 }
 
 .party-badge-text {
-  color: #02CCFE !important;
+  color: #02ccfe !important;
   font-weight: 700 !important;
   font-size: 0.78rem !important;
   letter-spacing: 0.8px;
 }
 
-/* Titles */
+/* Hero Titles */
+
 .hero-title {
   font-weight: 900 !important;
   color: #ffffff !important;
@@ -71,7 +89,7 @@
 
 .hero-subtitle {
   font-weight: 800 !important;
-  color: #02CCFE !important;
+  color: #02ccfe !important;
   margin-top: 10px !important;
   font-size: 1.45rem !important;
   line-height: 1.2 !important;
@@ -93,7 +111,10 @@
   line-height: 1.6 !important;
 }
 
-/* Hero CTA Buttons */
+/* =========================================================
+   HERO CTA BUTTONS
+   ========================================================= */
+
 .hero-cta-buttons {
   display: flex;
   gap: 16px;
@@ -125,11 +146,14 @@
 }
 
 .cta-btn-secondary:hover {
-  border-color: #02CCFE !important;
-  color: #02CCFE !important;
+  border-color: #02ccfe !important;
+  color: #02ccfe !important;
 }
 
-/* Right Candidate Image Box */
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
 .hero-image-container {
   width: 380px;
   flex-shrink: 0;
@@ -154,7 +178,10 @@
   display: block;
 }
 
-/* Core Pillars Layout */
+/* =========================================================
+   CORE PILLARS
+   ========================================================= */
+
 .pillars-section {
   padding: 60px 0;
   background-color: #ffffff;
@@ -162,39 +189,214 @@
 
 .section-title {
   font-weight: 800 !important;
-  color: #0d1b3e;
+  color: #0d1b3e !important;
 }
 
 .section-subtitle {
-  color: #d32f2f;
+  color: #d32f2f !important;
   font-weight: 600 !important;
   margin-top: 5px !important;
 }
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(240px, 1fr)
+  );
   gap: 24px;
 }
 
 .pillar-card {
   height: 100%;
   border-top: 4px solid #d32f2f;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.09) !important;
 }
 
 .pillar-title {
   font-weight: 700 !important;
-  color: #0d1b3e;
+  color: #0d1b3e !important;
   margin-bottom: 10px !important;
 }
 
 .pillar-desc {
-  color: #555555;
+  color: #555555 !important;
   line-height: 1.5 !important;
 }
 
-/* Candidate Banner Section */
+/* =========================================================
+   COMMUNITY IMPACT INTRO
+   ========================================================= */
+
+.impact-intro-section {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f5f8fc 100%
+    );
+  padding: 75px 0 45px;
+}
+
+.impact-intro-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.impact-overline {
+  color: #d32f2f !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+}
+
+.impact-main-title {
+  margin-top: 7px !important;
+  color: #0d1b3e !important;
+  font-weight: 900 !important;
+  line-height: 1.2 !important;
+}
+
+.impact-main-description {
+  margin-top: 18px !important;
+  color: #4f5968 !important;
+  font-size: 1.03rem !important;
+  line-height: 1.75 !important;
+}
+
+.impact-main-description.secondary {
+  margin-top: 10px !important;
+  color: #687386 !important;
+}
+
+/* =========================================================
+   COMMUNITY IMPACT SECTION
+   ========================================================= */
+
+.community-impact-section {
+  background-color: #f8f9fa;
+  padding: 35px 0 70px;
+}
+
+.community-impact-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.impact-subtitle {
+  margin-top: 5px !important;
+}
+
+.impact-view-btn {
+  color: #0d1b3e !important;
+  font-weight: 800 !important;
+  white-space: nowrap;
+}
+
+.impact-view-btn:hover {
+  color: #d32f2f !important;
+}
+
+/* Impact Cards */
+
+.community-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+  gap: 22px;
+}
+
+.community-impact-card {
+  position: relative;
+  height: 100%;
+  padding: 27px !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  border-top: 4px solid #d32f2f;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.06) !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-impact-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.10) !important;
+}
+
+.impact-card-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(211, 47, 47, 0.08);
+  color: #d32f2f;
+  margin-bottom: 18px;
+}
+
+.impact-card-icon svg {
+  font-size: 26px;
+}
+
+.impact-card-label {
+  display: block;
+  color: #d32f2f !important;
+  font-size: 0.67rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.1px !important;
+  margin-bottom: 6px !important;
+}
+
+.impact-card-title {
+  color: #0d1b3e !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 10px !important;
+}
+
+.impact-card-description {
+  color: #5c6470 !important;
+  line-height: 1.65 !important;
+  font-size: 0.9rem !important;
+}
+
+.impact-note {
+  margin-top: 28px;
+  padding: 15px 18px;
+  border-left: 4px solid #ffc107;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.impact-note p {
+  color: #697386 !important;
+  line-height: 1.6 !important;
+}
+
+/* =========================================================
+   CANDIDATE BANNER
+   ========================================================= */
+
 .candidate-banner-section {
   background-color: #0d1b3e;
   color: #ffffff;
@@ -218,16 +420,17 @@
 .banner-img {
   width: 100%;
   border-radius: 12px;
+  display: block;
 }
 
 .banner-title {
   font-weight: 800 !important;
-  color: #02CCFE;
+  color: #02ccfe !important;
 }
 
 .banner-text {
   margin-top: 15px !important;
-  color: #e0e0e0;
+  color: #e0e0e0 !important;
   font-size: 1.05rem !important;
   line-height: 1.6 !important;
 }
@@ -239,7 +442,14 @@
   font-weight: 700 !important;
 }
 
-/* News Section */
+.banner-btn:hover {
+  background-color: #b71c1c !important;
+}
+
+/* =========================================================
+   NEWS SECTION
+   ========================================================= */
+
 .news-feed-section {
   padding: 60px 0;
 }
@@ -247,13 +457,34 @@
 .news-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  gap: 20px;
   margin-bottom: 30px;
 }
 
+.news-header-description {
+  margin-top: 7px !important;
+  color: #687386 !important;
+}
+
+.view-all-news-btn {
+  color: #0d1b3e !important;
+  font-weight: 800 !important;
+  white-space: nowrap;
+}
+
+.view-all-news-btn:hover {
+  color: #d32f2f !important;
+}
+
+/* Actual API News Cards */
+
 .news-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
   gap: 24px;
 }
 
@@ -261,38 +492,234 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.08) !important;
   border-radius: 8px !important;
+  overflow: hidden;
+  border-top: 3px solid #d32f2f;
 }
 
 .news-date {
-  color: #d32f2f;
-  font-weight: 700;
+  color: #d32f2f !important;
+  font-weight: 700 !important;
 }
 
 .news-card-title {
   font-weight: 700 !important;
-  color: #0d1b3e;
+  color: #0d1b3e !important;
   margin: 6px 0 !important;
 }
 
 .news-card-body {
-  color: #666666;
+  color: #666666 !important;
   line-height: 1.5 !important;
 }
 
-/* Mobile & Tablet Responsiveness */
+/* =========================================================
+   NEWS FALLBACK
+   ========================================================= */
+
+.news-fallback-box {
+  padding: 45px 30px;
+  text-align: center;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f7f9fc 100%
+    );
+  border-radius: 14px;
+  border: 1px solid #e4e8ef;
+  box-shadow:
+    0 7px 20px rgba(0, 0, 0, 0.05);
+}
+
+.news-fallback-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(211, 47, 47, 0.09);
+  color: #d32f2f;
+}
+
+.news-fallback-icon svg {
+  font-size: 32px;
+}
+
+.news-fallback-title {
+  color: #0d1b3e !important;
+  font-weight: 800 !important;
+}
+
+.news-fallback-text {
+  max-width: 760px;
+  margin: 12px auto 0 !important;
+  color: #606a79 !important;
+  line-height: 1.7 !important;
+}
+
+.news-fallback-btn {
+  margin-top: 22px !important;
+  background-color: #d32f2f !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.news-fallback-btn:hover {
+  background-color: #b71c1c !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media (max-width: 960px) {
+
   .hero-flex-layout {
     flex-direction: column;
   }
+
+  .hero-text-container {
+    width: 100%;
+  }
+
   .hero-image-container {
     width: 100%;
     max-width: 360px;
     justify-content: center;
     margin-top: 20px;
   }
+
   .banner-flex-layout {
     flex-direction: column;
+  }
+
+  .banner-img-box,
+  .banner-text-box {
+    width: 100%;
+  }
+
+  .community-impact-grid {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero-section {
+    padding-top: 30px;
+  }
+
+  .hero-container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .hero-title {
+    font-size: 2.1rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem !important;
+  }
+
+  .hero-office {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-description {
+    font-size: 0.92rem !important;
+  }
+
+  .hero-cta-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-image-container {
+    max-width: 100%;
+  }
+
+  .hero-candidate-img {
+    height: 390px;
+  }
+
+  .pillars-section {
+    padding: 45px 0;
+  }
+
+  .impact-intro-section {
+    padding: 55px 0 30px;
+  }
+
+  .impact-main-title {
+    font-size: 2rem !important;
+  }
+
+  .impact-main-description {
+    font-size: 0.94rem !important;
+  }
+
+  .community-impact-section {
+    padding-bottom: 50px;
+  }
+
+  .community-impact-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .community-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-view-btn {
+    padding-left: 0 !important;
+  }
+
+  .community-impact-card {
+    padding: 23px !important;
+  }
+
+  .news-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .view-all-news-btn {
+    padding-left: 0 !important;
+  }
+
+  .news-feed-section {
+    padding: 45px 0;
+  }
+
+  .news-fallback-box {
+    padding: 35px 20px;
+  }
+
+  .news-fallback-title {
+    font-size: 1.3rem !important;
+  }
+
+  .news-fallback-text {
+    font-size: 0.9rem !important;
   }
 }

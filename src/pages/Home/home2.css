@@ -1,0 +1,298 @@
+.home-root {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Hero Section Base */
+.hero-section {
+  background: linear-gradient(135deg, #0a142f 0%, #0d1b3e 100%);
+  color: #ffffff;
+  padding: 40px 0 50px 0;
+  width: 100%;
+}
+
+.hero-container {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.hero-flex-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Left Hero Column */
+.hero-text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Badge pill */
+.party-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 4px 14px 4px 6px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-adp-badge-img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.party-badge-text {
+  color: #02CCFE !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.8px;
+}
+
+/* Titles */
+.hero-title {
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  font-size: 2.75rem !important;
+  letter-spacing: -0.5px;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+}
+
+.hero-subtitle {
+  font-weight: 800 !important;
+  color: #02CCFE !important;
+  margin-top: 10px !important;
+  font-size: 1.45rem !important;
+  line-height: 1.2 !important;
+}
+
+.hero-office {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin-top: 10px !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.3px;
+}
+
+.hero-description {
+  margin-top: 20px !important;
+  color: #d1d5db !important;
+  font-size: 1rem !important;
+  max-width: 620px;
+  line-height: 1.6 !important;
+}
+
+/* Hero CTA Buttons */
+.hero-cta-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cta-btn-primary {
+  background-color: #d32f2f !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  padding: 10px 22px !important;
+  font-size: 0.85rem !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.cta-btn-primary:hover {
+  background-color: #b71c1c !important;
+}
+
+.cta-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 10px 22px !important;
+  font-size: 0.85rem !important;
+  border-radius: 4px !important;
+  background-color: transparent !important;
+}
+
+.cta-btn-secondary:hover {
+  border-color: #02CCFE !important;
+  color: #02CCFE !important;
+}
+
+/* Right Candidate Image Box */
+.hero-image-container {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-img-frame {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-bottom: 5px solid #d32f2f;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-candidate-img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Core Pillars Layout */
+.pillars-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.section-title {
+  font-weight: 800 !important;
+  color: #0d1b3e;
+}
+
+.section-subtitle {
+  color: #d32f2f;
+  font-weight: 600 !important;
+  margin-top: 5px !important;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.pillar-card {
+  height: 100%;
+  border-top: 4px solid #d32f2f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.pillar-title {
+  font-weight: 700 !important;
+  color: #0d1b3e;
+  margin-bottom: 10px !important;
+}
+
+.pillar-desc {
+  color: #555555;
+  line-height: 1.5 !important;
+}
+
+/* Candidate Banner Section */
+.candidate-banner-section {
+  background-color: #0d1b3e;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.banner-flex-layout {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.banner-img-box {
+  flex: 5;
+}
+
+.banner-text-box {
+  flex: 7;
+}
+
+.banner-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.banner-title {
+  font-weight: 800 !important;
+  color: #02CCFE;
+}
+
+.banner-text {
+  margin-top: 15px !important;
+  color: #e0e0e0;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+.banner-btn {
+  margin-top: 25px !important;
+  background-color: #d32f2f !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* News Section */
+.news-feed-section {
+  padding: 60px 0;
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.news-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.news-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 8px !important;
+}
+
+.news-date {
+  color: #d32f2f;
+  font-weight: 700;
+}
+
+.news-card-title {
+  font-weight: 700 !important;
+  color: #0d1b3e;
+  margin: 6px 0 !important;
+}
+
+.news-card-body {
+  color: #666666;
+  line-height: 1.5 !important;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 960px) {
+  .hero-flex-layout {
+    flex-direction: column;
+  }
+  .hero-image-container {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .banner-flex-layout {
+    flex-direction: column;
+  }
+}
