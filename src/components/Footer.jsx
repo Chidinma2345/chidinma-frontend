@@ -19,7 +19,7 @@ const Footer = () => {
               </Typography>
             </Box>
             <Typography variant="body2" className="footer-motto">
-              Action Democratic Party (ADP) &ldquo;&bull; The Credible Alternative &bull;&rdquo;
+              Action Democratic Party (ADP); "The Credible Alternative".
             </Typography>
             <Typography variant="body2" className="footer-desc">
               Dedicated to transparency, inclusive legislative service, and sustained grassroots growth for Oru West Constituency, Imo State.
