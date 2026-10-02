@@ -92,19 +92,19 @@ const Footer = () => {
                 <Facebook />
               </IconButton>
               {/* Facebook Page */}
-              <IconButton component="a" href="https://facebook.com/chidinmachukwumaofficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" className="social-btn fb-page">
+              {/* <IconButton component="a" href="https://facebook.com/chidinmachukwumaofficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" className="social-btn fb-page">
                 <Facebook />
-              </IconButton>
+              </IconButton> */}
               {/* Instagram */}
               <IconButton component="a" href="https://www.instagram.com/chidinmachukwumaofficial?igsi=MW5xbDJ6dnhodHJ6cQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-btn ig">
                 <Instagram />
               </IconButton>
               {/* Twitter/X */}
-              <IconButton component="a" href="https://x.com/VoteChidinma" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" className="social-btn tw">
+              <IconButton component="a" href="https://x.com/Chidinmaofficl" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" className="social-btn tw">
                 <Twitter />
               </IconButton>
               {/* TikTok */}
-              <IconButton component="a" href="https://tiktok.com/@honchidinmachukuma" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="social-btn tt">
+              <IconButton component="a" href="https://vt.tiktok.com/ZSbyKosG7/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="social-btn tt">
                 <Typography variant="caption" style={{ fontWeight: 800 }}>TT</Typography>
               </IconButton>
               {/* YouTube */}
