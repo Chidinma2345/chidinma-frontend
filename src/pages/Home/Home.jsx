@@ -332,7 +332,7 @@ const Home = () => {
               variant="h5"
               className="campaign-video-subtitle"
             >
-              WATCH THE CAMPAIGN VIDEO
+              WATCH THE VIDEO
             </Typography>
           </Box>
 
