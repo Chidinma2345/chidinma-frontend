@@ -1,8 +1,10 @@
+
 /* Media Page Styling using Deep Blue (#0d1b3e), Action Red (#d32f2f), and Gold (#ffc107) */
 
 .media-root {
   background-color: #f8f9fa;
   min-height: 100vh;
+  width: 100%;
 }
 
 .media-header-banner {
@@ -15,16 +17,17 @@
 
 .media-page-title {
   font-weight: 800 !important;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 2.3rem !important;
 }
 
 .media-page-subtitle {
-  color: #02CCFE;
+  color: #02ccfe !important;
   margin-top: 10px !important;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  line-height: 1.7 !important;
 }
 
 .media-content-container {
@@ -53,14 +56,20 @@
   height: 3px;
 }
 
+/* =========================================================
+   MEDIA PHOTO AND VIDEO CARDS
+========================================================= */
+
 .media-card {
   height: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
   border-radius: 10px !important;
   overflow: hidden;
   transition: transform 0.2s ease-in-out !important;
+  background-color: #ffffff;
 }
 
 .media-card:hover {
@@ -68,19 +77,21 @@
 }
 
 .media-img {
+  width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .media-card-title {
   font-weight: 700 !important;
-  color: #0d1b3e;
+  color: #0d1b3e !important;
   line-height: 1.3 !important;
 }
 
 .media-card-date {
   display: block;
   margin-top: 8px !important;
-  color: #888888;
+  color: #888888 !important;
 }
 
 .media-type-badge {
@@ -95,10 +106,233 @@
 
 .photo-badge {
   background-color: rgba(13, 27, 62, 0.1);
-  color: #0d1b3e;
+  color: #0d1b3e !important;
 }
 
 .video-badge {
   background-color: rgba(211, 47, 47, 0.1);
-  color: #d32f2f;
+  color: #d32f2f !important;
+}
+
+/* =========================================================
+   THREE PHOTOS PER ROW
+   Applies to All Media and Photo Gallery.
+
+   Covers common CSS Grid and Material UI Grid layouts.
+========================================================= */
+
+/* CSS Grid photo/card containers */
+.media-grid,
+.media-gallery-grid,
+.media-photos-grid,
+.media-cards-grid,
+.photo-gallery-grid,
+.photo-grid,
+.gallery-grid,
+.all-media-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Keep individual cards within their grid columns */
+.media-grid > *,
+.media-gallery-grid > *,
+.media-photos-grid > *,
+.media-cards-grid > *,
+.photo-gallery-grid > *,
+.photo-grid > *,
+.gallery-grid > *,
+.all-media-grid > * {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Material UI Grid layouts: three equal columns on desktop */
+.media-content-container .MuiGrid-container {
+  width: 100%;
+}
+
+/* =========================================================
+   RESPONSIVE VIDEO PLAYER FOR MEDIA CARDS
+========================================================= */
+
+.media-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #050914;
+  overflow: hidden;
+}
+
+.media-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================================
+   FEATURED VIDEO — VIDEO HIGHLIGHTS TAB
+   Keeps the embedded YouTube video playing on the website.
+========================================================= */
+
+.media-featured-video-card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px !important;
+  background-color: #ffffff !important;
+  border-top: 5px solid #d32f2f;
+  box-shadow: 0 10px 30px rgba(13, 27, 62, 0.12) !important;
+}
+
+.media-featured-video-heading {
+  padding: 28px 30px 22px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f4f7fc 100%);
+}
+
+.media-featured-video-overline {
+  display: block;
+  color: #d32f2f !important;
+  font-weight: 800 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 2px !important;
+}
+
+.media-featured-video-title {
+  margin-top: 5px !important;
+  color: #0d1b3e !important;
+  font-weight: 900 !important;
+  line-height: 1.2 !important;
+}
+
+.media-featured-video-description {
+  margin-top: 10px !important;
+  color: #606a79 !important;
+  line-height: 1.6 !important;
+}
+
+/* Large, responsive 16:9 video player */
+.media-featured-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #050914;
+}
+
+.media-featured-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================================
+   TABLET
+   Two photos per row on medium-sized screens.
+========================================================= */
+
+@media (max-width: 900px) {
+  .media-header-banner {
+    padding: 42px 18px;
+  }
+
+  .media-page-title {
+    font-size: 2rem !important;
+  }
+
+  .media-featured-video-card {
+    border-radius: 10px !important;
+  }
+
+  .media-featured-video-heading {
+    padding: 24px 22px 20px;
+  }
+
+  .media-grid,
+  .media-gallery-grid,
+  .media-photos-grid,
+  .media-cards-grid,
+  .photo-gallery-grid,
+  .photo-grid,
+  .gallery-grid,
+  .all-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   One photo per row for comfortable viewing.
+========================================================= */
+
+@media (max-width: 600px) {
+  .media-header-banner {
+    padding: 35px 12px;
+  }
+
+  .media-page-title {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .media-page-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  .media-content-container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .media-tabs-wrapper {
+    margin-bottom: 25px;
+  }
+
+  .media-tabs .MuiTab-root {
+    min-width: 0 !important;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .media-grid,
+  .media-gallery-grid,
+  .media-photos-grid,
+  .media-cards-grid,
+  .photo-gallery-grid,
+  .photo-grid,
+  .gallery-grid,
+  .all-media-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px;
+  }
+
+  .media-featured-video-heading {
+    padding: 22px 16px 18px;
+  }
+
+  .media-featured-video-title {
+    font-size: 1.6rem !important;
+  }
+
+  .media-featured-video-description {
+    font-size: 0.9rem !important;
+  }
+
+  .media-featured-video-card {
+    border-radius: 8px !important;
+  }
 }

@@ -27,6 +27,10 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Campaign video. This is an embedded player, not a link to YouTube.
+  const campaignVideoUrl =
+    'https://www.youtube.com/embed/G4E1p_2poO0?rel=0&playsinline=1';
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -40,9 +44,6 @@ const Home = () => {
         );
       } catch (err) {
         console.error('Error fetching posts:', err);
-
-        // The page will still display the community
-        // impact content when the backend is unavailable.
         setPosts([]);
       } finally {
         setLoading(false);
@@ -55,14 +56,31 @@ const Home = () => {
   const getYoutubeEmbedUrl = (url) => {
     if (!url) return '';
 
-    const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    try {
+      const parsedUrl = new URL(url);
+      let videoId = '';
 
-    const match = url.match(regExp);
+      if (
+        parsedUrl.hostname === 'youtu.be' ||
+        parsedUrl.hostname.endsWith('.youtu.be')
+      ) {
+        videoId = parsedUrl.pathname.split('/').filter(Boolean)[0] || '';
+      } else if (
+        parsedUrl.hostname.includes('youtube.com') ||
+        parsedUrl.hostname.includes('youtube-nocookie.com')
+      ) {
+        videoId =
+          parsedUrl.searchParams.get('v') ||
+          parsedUrl.pathname.match(/\/(?:embed|shorts|live)\/([^/?]+)/)?.[1] ||
+          '';
+      }
 
-    return match && match[2].length === 11
-      ? `https://www.youtube.com/embed/${match[2]}`
-      : '';
+      return /^[a-zA-Z0-9_-]{11}$/.test(videoId)
+        ? `https://www.youtube.com/embed/${videoId}?rel=0&playsinline=1`
+        : '';
+    } catch (error) {
+      return '';
+    }
   };
 
   /*
@@ -130,12 +148,9 @@ const Home = () => {
       <Box className="hero-section">
         <Container maxWidth="xl" className="hero-container">
 
-          {/* IMAGE FIRST — TEXT SECOND */}
           <Box className="hero-flex-layout">
 
-            {/* =====================================================
-                LEFT SIDE — CANDIDATE IMAGE
-            ====================================================== */}
+            {/* LEFT SIDE — CANDIDATE IMAGE */}
             <Box className="hero-image-container">
               <Box className="hero-img-frame">
                 <img
@@ -146,9 +161,7 @@ const Home = () => {
               </Box>
             </Box>
 
-            {/* =====================================================
-                RIGHT SIDE — HERO WRITE-UPS
-            ====================================================== */}
+            {/* RIGHT SIDE — HERO WRITE-UPS */}
             <Box className="hero-text-container">
 
               <Box className="party-badge">
@@ -219,7 +232,6 @@ const Home = () => {
                 </Button>
 
               </Box>
-
             </Box>
 
           </Box>
@@ -279,7 +291,6 @@ const Home = () => {
                 key={index}
               >
                 <CardContent>
-
                   <Typography
                     variant="h6"
                     className="pillar-title"
@@ -293,10 +304,48 @@ const Home = () => {
                   >
                     {pillar.desc}
                   </Typography>
-
                 </CardContent>
               </Card>
             ))}
+          </Box>
+
+        </Container>
+      </Box>
+
+      {/* =========================================================
+          CAMPAIGN VIDEO SECTION
+          POSITION: IMMEDIATELY AFTER CORE PILLARS
+          AND BEFORE "SERVICE THAT REACHES PEOPLE"
+      ========================================================== */}
+      <Box className="campaign-video-section">
+        <Container maxWidth="lg">
+
+          <Box className="campaign-video-heading">
+            <Typography
+              variant="h3"
+              className="campaign-video-title"
+            >
+              The People Have Decided
+            </Typography>
+
+            <Typography
+              variant="h5"
+              className="campaign-video-subtitle"
+            >
+              WATCH THE CAMPAIGN VIDEO
+            </Typography>
+          </Box>
+
+          <Box className="campaign-video-frame">
+            <iframe
+              src={campaignVideoUrl}
+              title="Hon. Chidinma Nwamaka Chukwuma Campaign Video"
+              className="campaign-video-iframe"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </Box>
 
         </Container>
@@ -558,68 +607,77 @@ const Home = () => {
 
           <Box className="news-cards-grid">
 
-            {posts.map((post) => (
-              <Card
-                className="news-card"
-                key={post._id}
-              >
+            {posts.map((post) => {
+              const embeddedVideo = post.youtubeUrl
+                ? getYoutubeEmbedUrl(post.youtubeUrl)
+                : '';
 
-                {post.imageUrl && (
-                  <CardMedia
-                    component="img"
-                    height="220"
-                    image={post.imageUrl}
-                    alt={post.title}
-                  />
-                )}
+              return (
+                <Card
+                  className="news-card"
+                  key={post._id}
+                >
 
-                {post.youtubeUrl && (
-                  <iframe
-                    width="100%"
-                    height="220"
-                    src={getYoutubeEmbedUrl(post.youtubeUrl)}
-                    title={post.title}
-                    frameBorder="0"
-                    allowFullScreen
-                  ></iframe>
-                )}
+                  {post.imageUrl && (
+                    <CardMedia
+                      component="img"
+                      height="220"
+                      image={post.imageUrl}
+                      alt={post.title}
+                    />
+                  )}
 
-                <CardContent>
+                  {embeddedVideo && (
+                    <Box className="news-video-frame">
+                      <iframe
+                        src={embeddedVideo}
+                        title={post.title || 'Campaign video'}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </Box>
+                  )}
 
-                  <Typography
-                    variant="caption"
-                    className="news-date"
-                  >
-                    {new Date(post.createdAt).toLocaleDateString(
-                      'en-US',
-                      {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      }
-                    )}
-                  </Typography>
+                  <CardContent>
 
-                  <Typography
-                    variant="h6"
-                    className="news-card-title"
-                  >
-                    {post.title}
-                  </Typography>
+                    <Typography
+                      variant="caption"
+                      className="news-date"
+                    >
+                      {post.createdAt
+                        ? new Date(post.createdAt).toLocaleDateString(
+                            'en-US',
+                            {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            }
+                          )
+                        : ''}
+                    </Typography>
 
-                  <Typography
-                    variant="body2"
-                    className="news-card-body"
-                  >
-                    {post.content.length > 120
-                      ? `${post.content.substring(0, 120)}...`
-                      : post.content}
-                  </Typography>
+                    <Typography
+                      variant="h6"
+                      className="news-card-title"
+                    >
+                      {post.title}
+                    </Typography>
 
-                </CardContent>
+                    <Typography
+                      variant="body2"
+                      className="news-card-body"
+                    >
+                      {(post.content || '').length > 120
+                        ? `${post.content.substring(0, 120)}...`
+                        : post.content || ''}
+                    </Typography>
 
-              </Card>
-            ))}
+                  </CardContent>
+
+                </Card>
+              );
+            })}
 
           </Box>
 

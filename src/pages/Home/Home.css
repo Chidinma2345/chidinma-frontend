@@ -15,14 +15,9 @@
       rgba(2, 204, 254, 0.08),
       transparent 30%
     ),
-    linear-gradient(
-      135deg,
-      #0a142f 0%,
-      #0d1b3e 100%
-    );
-
+    linear-gradient(135deg, #0a142f 0%, #0d1b3e 100%);
   color: #ffffff;
-  padding: 40px 0 50px 0;
+  padding: 40px 0 50px;
   width: 100%;
 }
 
@@ -31,14 +26,7 @@
   padding-right: 24px !important;
 }
 
-/*
-   IMPORTANT:
-   IMAGE IS NOW FIRST.
-   TEXT IS SECOND.
-   
-   Desktop:
-   [ IMAGE ] [ WRITE-UPS ]
-*/
+/* Desktop: image on the left, write-ups on the right */
 
 .hero-flex-layout {
   display: flex;
@@ -47,10 +35,6 @@
   justify-content: space-between;
   gap: 30px;
 }
-
-/* =========================================================
-   HERO IMAGE — LEFT SIDE
-========================================================= */
 
 .hero-image-container {
   flex: 0 0 40%;
@@ -66,7 +50,7 @@
   overflow: hidden;
   background-color: #ffffff;
   border-bottom: 5px solid #d32f2f;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .hero-candidate-img {
@@ -76,10 +60,6 @@
   object-position: top center;
   display: block;
 }
-
-/* =========================================================
-   HERO RIGHT SIDE — WRITE-UPS
-========================================================= */
 
 .hero-text-container {
   flex: 1;
@@ -92,7 +72,7 @@
 }
 
 /* =========================================================
-   BADGE
+   PARTY BADGE
 ========================================================= */
 
 .party-badge {
@@ -218,27 +198,20 @@
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(240px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
 
 .pillar-card {
   height: 100%;
   border-top: 4px solid #d32f2f;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .pillar-card:hover {
   transform: translateY(-5px);
-  box-shadow:
-    0 12px 25px rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09) !important;
 }
 
 .pillar-title {
@@ -253,6 +226,69 @@
 }
 
 /* =========================================================
+   CAMPAIGN VIDEO
+   Appears directly after CORE PILLARS and before
+   SERVICE THAT REACHES PEOPLE.
+========================================================= */
+
+.campaign-video-section {
+  width: 100%;
+  padding: 0 0 42px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8faff 100%
+    );
+}
+
+.campaign-video-heading {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 18px;
+}
+
+.campaign-video-title {
+  color: #d32f2f !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2rem, 4vw, 2.65rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  margin: 0 !important;
+}
+
+.campaign-video-subtitle {
+  color: #d32f2f !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin-top: 3px !important;
+}
+
+.campaign-video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background-color: #071126;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(13, 27, 62, 0.18);
+  border: 1px solid rgba(13, 27, 62, 0.12);
+}
+
+.campaign-video-iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================================
    COMMUNITY IMPACT INTRO
 ========================================================= */
 
@@ -263,7 +299,7 @@
       #ffffff 0%,
       #f5f8fc 100%
     );
-  padding: 75px 0 45px;
+  padding: 45px 0;
 }
 
 .impact-intro-content {
@@ -335,10 +371,7 @@
 
 .community-impact-grid {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    minmax(0, 1fr)
-  );
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -349,17 +382,13 @@
   border-radius: 12px !important;
   background: #ffffff !important;
   border-top: 4px solid #d32f2f;
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.06) !important;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .community-impact-card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.10) !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1) !important;
 }
 
 .impact-card-icon {
@@ -431,10 +460,12 @@
 
 .banner-img-box {
   flex: 5;
+  min-width: 0;
 }
 
 .banner-text-box {
   flex: 7;
+  min-width: 0;
 }
 
 .banner-img {
@@ -471,7 +502,8 @@
 ========================================================= */
 
 .news-feed-section {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .news-header {
@@ -503,10 +535,7 @@
 
 .news-cards-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
@@ -514,11 +543,30 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow:
-    0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
   border-radius: 8px !important;
   overflow: hidden;
   border-top: 3px solid #d32f2f;
+}
+
+.news-card .MuiCardContent-root {
+  flex-grow: 1;
+}
+
+.news-video-frame {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #071126;
+  overflow: hidden;
+}
+
+.news-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .news-date {
@@ -552,8 +600,7 @@
     );
   border-radius: 14px;
   border: 1px solid #e4e8ef;
-  box-shadow:
-    0 7px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.05);
 }
 
 .news-fallback-icon {
@@ -600,10 +647,6 @@
 ========================================================= */
 
 @media (max-width: 960px) {
-
-  /*
-     Keep IMAGE FIRST on tablet/mobile too.
-  */
   .hero-flex-layout {
     flex-direction: column;
     align-items: center;
@@ -635,13 +678,15 @@
   .banner-img-box,
   .banner-text-box {
     width: 100%;
+    flex: none;
   }
 
   .community-impact-grid {
-    grid-template-columns: repeat(
-      2,
-      minmax(0, 1fr)
-    );
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .campaign-video-section {
+    padding-bottom: 35px;
   }
 }
 
@@ -650,7 +695,6 @@
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .hero-section {
     padding-top: 30px;
   }
@@ -660,9 +704,6 @@
     padding-right: 18px !important;
   }
 
-  /*
-     IMAGE REMAINS FIRST ON MOBILE
-  */
   .hero-flex-layout {
     flex-direction: column;
     align-items: stretch;
@@ -718,8 +759,30 @@
     padding: 45px 0;
   }
 
+  .campaign-video-section {
+    padding: 0 0 30px;
+  }
+
+  .campaign-video-heading {
+    padding: 0 14px;
+    margin-bottom: 14px;
+  }
+
+  .campaign-video-title {
+    font-size: 1.9rem !important;
+  }
+
+  .campaign-video-subtitle {
+    font-size: 1.1rem !important;
+  }
+
+  .campaign-video-frame {
+    border-radius: 0;
+    width: 100%;
+  }
+
   .impact-intro-section {
-    padding: 55px 0 30px;
+    padding: 40px 0 30px;
   }
 
   .impact-main-title {
@@ -761,7 +824,12 @@
   }
 
   .news-feed-section {
-    padding: 45px 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .news-cards-grid {
+    grid-template-columns: 1fr;
   }
 
   .news-fallback-box {
