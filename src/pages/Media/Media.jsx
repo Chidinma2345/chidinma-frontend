@@ -905,7 +905,7 @@ import {
 import axios from 'axios';
 import Spinner from '../../components/Spinner';
 import { campaignVideos } from '../../data/campaignVideos';
-
+import { campaignPhotos } from '../../data/campaignPhotos';
 import './Media.css';
 
 const Media = () => {
@@ -986,33 +986,33 @@ const Media = () => {
   );
 
   // Existing official campaign images.
-  const staticCampaignImages = [
-    {
-      src: '/hon-chidinma1.jpeg',
-      title: 'Hon. Chidinma Nwamaka Chukwuma Official Poster'
-    },
-    {
-      src: '/hon-chidinma2.png',
-      title: 'Together We Can Build Campaign Banner'
-    },
-    {
-      src: '/adp-logo.png',
-      title: 'Action Democratic Party (ADP) Symbol'
-    },
-    {
-      src: '/adp-flag.jpeg',
-      title: 'Action Democratic Party Official Flag'
-    },
-    {
-      src: '/hon-chidinma-with-party-flag1.jpeg',
-      title: 'Hon. Chidinma with the Party Flag'
-    },
-    {
-      src: '/hon-chidinma-with-party-flag2.jpeg',
-      title: 'Hon. Chidinma with the Party Flag'
-    }
-  ];
-
+  // const staticCampaignImages = [
+  //   {
+  //     src: '/hon-chidinma1.jpeg',
+  //     title: 'Hon. Chidinma Nwamaka Chukwuma Official Poster'
+  //   },
+  //   {
+  //     src: '/hon-chidinma2.png',
+  //     title: 'Together We Can Build Campaign Banner'
+  //   },
+  //   {
+  //     src: '/adp-logo.png',
+  //     title: 'Action Democratic Party (ADP) Symbol'
+  //   },
+  //   {
+  //     src: '/adp-flag.jpeg',
+  //     title: 'Action Democratic Party Official Flag'
+  //   },
+  //   {
+  //     src: '/hon-chidinma-with-party-flag1.jpeg',
+  //     title: 'Hon. Chidinma with the Party Flag'
+  //   },
+  //   {
+  //     src: '/hon-chidinma-with-party-flag2.jpeg',
+  //     title: 'Hon. Chidinma with the Party Flag'
+  //   }
+  // ];
+const staticCampaignImages = campaignPhotos;
   // Renders all campaign videos from shared campaignVideos.js (newest first, original last).
   const renderCampaignVideos = (keyPrefix) =>
     campaignVideos.map((video, idx) => {

@@ -22,54 +22,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../../components/Spinner';
 import { campaignVideos } from '../../data/campaignVideos';
-
+import { campaignPhotos } from '../../data/campaignPhotos';
 import './Home.css';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  /* =====================================================================
-     👇 PASTE NEW YOUTUBE LINKS AT THE TOP OF THIS LIST NEXT WEEK 👇
-     - Put the newest YouTube link FIRST (at the top of the array).
-     - You can paste any YouTube link format (youtu.be, youtube.com/watch,
-       or youtube.com/shorts).
-     - The oldest video ('G4E1p_2poO0') is at the bottom so it shows last.
-  ====================================================================== */
-  const campaignVideos = [
-    // --- ADD NEXT WEEK'S NEW YOUTUBE VIDEOS RIGHT BELOW THIS LINE ---
-    {
-      title: 'Campaign Trail & Community Engagement',
-      subtitle: 'LATEST CAMPAIGN VIDEO',
-      url: 'https://youtu.be/aK3GqLe9hzQ'
-    },
-    {
-      title: 'Grassroots Outreach Highlights',
-      subtitle: 'CAMPAIGN HIGHLIGHT',
-      url: 'https://youtube.com/shorts/HywPF64JRrU'
-    },
-    {
-      title: 'Standing With The People of Oru West',
-      subtitle: 'CAMPAIGN HIGHLIGHT',
-      url: 'https://youtube.com/shorts/d7hs7d9cIiE'
-    },
-    {
-      title: 'People-Focused Leadership in Action',
-      subtitle: 'CAMPAIGN HIGHLIGHT',
-      url: 'https://youtube.com/shorts/WYBDx1Z9Ct8'
-    },
-    {
-      title: 'Together We Can Build Oru West',
-      subtitle: 'CAMPAIGN HIGHLIGHT',
-      url: 'https://youtube.com/shorts/46ZJLNzLlSk'
-    },
-    // --- OLDEST VIDEO (STAYS LAST AT THE BOTTOM) ---
-    {
-      title: 'The People Have Decided',
-      subtitle: 'CAMPAIGN ARCHIVE',
-      url: 'https://www.youtube.com/watch?v=G4E1p_2poO0'
-    }
-  ];
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -493,6 +451,121 @@ const Home = () => {
                   );
                 })}
               </Grid>
+            </Box>
+          )}
+
+          {/* 3. CAMPAIGN PHOTO GALLERY (PULLED FROM src/data/campaignPhotos.js) */}
+          {campaignPhotos.length > 0 && (
+            <Box sx={{ mt: 7 }}>
+              <Typography
+                variant="h5"
+                align="center"
+                sx={{
+                  fontWeight: 800,
+                  mb: 3,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}
+              >
+                Campaign Photo Gallery
+              </Typography>
+
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: {
+                    xs: '1fr',
+                    sm: 'repeat(2, 1fr)',
+                    md: 'repeat(3, 1fr)'
+                  },
+                  gap: 3
+                }}
+              >
+                {campaignPhotos.map((photo, index) => (
+                  <Card
+                    key={`home-photo-${index}`}
+                    sx={{
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      backgroundColor: '#ffffff',
+                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.12)'
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: '100%',
+                        height: 240,
+                        backgroundColor: '#f0f2f5',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <CardMedia
+                        component="img"
+                        image={photo.src}
+                        alt={photo.title}
+                        sx={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          objectPosition: 'center'
+                        }}
+                      />
+                    </Box>
+
+                    <CardContent>
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          fontWeight: 700,
+                          color: '#0d1b3e',
+                          display: 'block',
+                          mb: 0.5,
+                          textTransform: 'uppercase'
+                        }}
+                      >
+                        {photo.badge || 'The Credible Alternative'}
+                      </Typography>
+
+                      <Typography
+                        variant="subtitle1"
+                        sx={{
+                          fontWeight: 700,
+                          color: '#0d1b3e',
+                          lineHeight: 1.3
+                        }}
+                      >
+                        {photo.title}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                ))}
+              </Box>
+
+              <Box sx={{ textAlign: 'center', mt: 4 }}>
+                <Button
+                  component={Link}
+                  to="/media"
+                  variant="outlined"
+                  endIcon={<ArrowForwardIcon />}
+                  sx={{
+                    fontWeight: 700,
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    '&:hover': {
+                      borderColor: '#ffc107',
+                      color: '#ffc107'
+                    }
+                  }}
+                >
+                  View Full Media Gallery
+                </Button>
+              </Box>
             </Box>
           )}
 
