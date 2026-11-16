@@ -6,7 +6,8 @@ import {
   CardContent,
   Typography,
   Box,
-  Button
+  Button,
+  Grid
 } from '@mui/material';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -20,6 +21,7 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../../components/Spinner';
+import { campaignVideos } from '../../data/campaignVideos';
 
 import './Home.css';
 
@@ -27,9 +29,47 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Campaign video. This is an embedded player, not a link to YouTube.
-  const campaignVideoUrl =
-    'https://www.youtube.com/embed/G4E1p_2poO0?rel=0&playsinline=1';
+  /* =====================================================================
+     👇 PASTE NEW YOUTUBE LINKS AT THE TOP OF THIS LIST NEXT WEEK 👇
+     - Put the newest YouTube link FIRST (at the top of the array).
+     - You can paste any YouTube link format (youtu.be, youtube.com/watch,
+       or youtube.com/shorts).
+     - The oldest video ('G4E1p_2poO0') is at the bottom so it shows last.
+  ====================================================================== */
+  const campaignVideos = [
+    // --- ADD NEXT WEEK'S NEW YOUTUBE VIDEOS RIGHT BELOW THIS LINE ---
+    {
+      title: 'Campaign Trail & Community Engagement',
+      subtitle: 'LATEST CAMPAIGN VIDEO',
+      url: 'https://youtu.be/aK3GqLe9hzQ'
+    },
+    {
+      title: 'Grassroots Outreach Highlights',
+      subtitle: 'CAMPAIGN HIGHLIGHT',
+      url: 'https://youtube.com/shorts/HywPF64JRrU'
+    },
+    {
+      title: 'Standing With The People of Oru West',
+      subtitle: 'CAMPAIGN HIGHLIGHT',
+      url: 'https://youtube.com/shorts/d7hs7d9cIiE'
+    },
+    {
+      title: 'People-Focused Leadership in Action',
+      subtitle: 'CAMPAIGN HIGHLIGHT',
+      url: 'https://youtube.com/shorts/WYBDx1Z9Ct8'
+    },
+    {
+      title: 'Together We Can Build Oru West',
+      subtitle: 'CAMPAIGN HIGHLIGHT',
+      url: 'https://youtube.com/shorts/46ZJLNzLlSk'
+    },
+    // --- OLDEST VIDEO (STAYS LAST AT THE BOTTOM) ---
+    {
+      title: 'The People Have Decided',
+      subtitle: 'CAMPAIGN ARCHIVE',
+      url: 'https://www.youtube.com/watch?v=G4E1p_2poO0'
+    }
+  ];
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -82,6 +122,10 @@ const Home = () => {
       return '';
     }
   };
+
+  // Separate the newest video (featured large player) from the remaining videos
+  const featuredVideo = campaignVideos[0];
+  const remainingVideos = campaignVideos.slice(1);
 
   /*
    * COMMUNITY IMPACT / FALLBACK UPDATES
@@ -316,37 +360,141 @@ const Home = () => {
           CAMPAIGN VIDEO SECTION
           POSITION: IMMEDIATELY AFTER CORE PILLARS
           AND BEFORE "SERVICE THAT REACHES PEOPLE"
+          - Newest video plays large at the top
+          - Other new videos follow in order
+          - Original video ('G4E1p_2poO0') appears last
       ========================================================== */}
       <Box className="campaign-video-section">
         <Container maxWidth="lg">
 
-          <Box className="campaign-video-heading">
-            <Typography
-              variant="h3"
-              className="campaign-video-title"
-            >
-              The People Have Decided
-            </Typography>
+          {/* 1. FEATURED NEWEST VIDEO */}
+          {featuredVideo && (
+            <>
+              <Box className="campaign-video-heading">
+                <Typography
+                  variant="h3"
+                  className="campaign-video-title"
+                >
+                  {featuredVideo.title}
+                </Typography>
 
-            <Typography
-              variant="h5"
-              className="campaign-video-subtitle"
-            >
-              WATCH THE VIDEO
-            </Typography>
-          </Box>
+                <Typography
+                  variant="h5"
+                  className="campaign-video-subtitle"
+                >
+                  {featuredVideo.subtitle} • WATCH THE VIDEO
+                </Typography>
+              </Box>
 
-          <Box className="campaign-video-frame">
-            <iframe
-              src={campaignVideoUrl}
-              title="Hon. Chidinma Nwamaka Chukwuma Campaign Video"
-              className="campaign-video-iframe"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </Box>
+              <Box className="campaign-video-frame">
+                <iframe
+                  src={getYoutubeEmbedUrl(featuredVideo.url)}
+                  title={featuredVideo.title}
+                  className="campaign-video-iframe"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </Box>
+            </>
+          )}
+
+          {/* 2. MORE CAMPAIGN VIDEOS (NEWEST FIRST, OLDEST VIDEO LAST) */}
+          {remainingVideos.length > 0 && (
+            <Box sx={{ mt: 6 }}>
+              <Typography
+                variant="h5"
+                align="center"
+                sx={{
+                  fontWeight: 800,
+                  mb: 3,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}
+              >
+                More Campaign Videos & Highlights
+              </Typography>
+
+              <Grid container spacing={3}>
+                {remainingVideos.map((video, index) => {
+                  const embedSrc = getYoutubeEmbedUrl(video.url);
+                  if (!embedSrc) return null;
+
+                  return (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={4}
+                      key={`campaign-vid-${index}`}
+                    >
+                      <Card
+                        sx={{
+                          height: '100%',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          borderRadius: '10px',
+                          overflow: 'hidden',
+                          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.12)'
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            position: 'relative',
+                            width: '100%',
+                            aspectRatio: '16 / 9',
+                            backgroundColor: '#050914'
+                          }}
+                        >
+                          <iframe
+                            src={embedSrc}
+                            title={video.title}
+                            loading="lazy"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            style={{
+                              position: 'absolute',
+                              inset: 0,
+                              width: '100%',
+                              height: '100%',
+                              border: 0
+                            }}
+                          />
+                        </Box>
+
+                        <CardContent>
+                          <Typography
+                            variant="caption"
+                            sx={{
+                              fontWeight: 700,
+                              color: '#d32f2f',
+                              display: 'block',
+                              mb: 0.5
+                            }}
+                          >
+                            {video.subtitle}
+                          </Typography>
+
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 700,
+                              color: '#0d1b3e',
+                              lineHeight: 1.3
+                            }}
+                          >
+                            {video.title}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </Box>
+          )}
 
         </Container>
       </Box>
